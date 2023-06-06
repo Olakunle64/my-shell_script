@@ -1,0 +1,30 @@
+#!/bin/bash
+#write a script that evaluate the value of an integer
+echo "This script needs you to input a number"
+echo -n "Please enter a number ->"
+read int
+
+if [ -z "$int" ]; then
+	exit 1
+
+if [ "$int" == 0 ]; then
+	echo "$int is equal to zero"
+else
+	if (( "$int" < 0 )); then
+		echo "$int is a negative number"
+		exit 1
+	fi
+	if [[ "$int" -gt 0 && $((int % 2)) -eq 0 ]]; then
+		echo "$int is a positive and even number"
+	elif [[ "$int" -gt 0 && $((int % 2)) -gt 0 ]]; then
+		echo "$int is a positive and odd number"
+	elif (( "$int" > 0 )); then
+		echo "$int is only a positive number"
+	fi
+fi
+else
+	echo "The value is not an integer"
+	exit 1
+fi	
+
+

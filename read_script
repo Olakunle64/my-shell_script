@@ -1,0 +1,27 @@
+#!/bin/bash
+#create a link to interact with the user. i.e, to allow interactivity
+echo "This script needs you to input an integer before it can proceed."
+echo -n "please enter an integer:"
+read int
+
+min_val=0
+max_val=75
+#This script is purposely to check if the number inputed by the user falls between 0 and 75
+if [ -z "$int" ]; then
+	exit 1
+fi
+if [ "$int" == 0 ]; then
+	echo "$int is equal to zero"
+fi
+if [[ "$int" -gt "$min_val" && "$int" -lt "$max_val" ]]; then
+	echo "$int is within $min_val and $max_val"
+else 
+	if (( "$int" > "$max_val" )); then
+		echo "$int is out of range"
+	elif (( "$int" < "$min_val" )); then
+		echo "$int is a negative number"
+	else
+		echo "it is not an integer"
+		exit 1
+	fi
+fi

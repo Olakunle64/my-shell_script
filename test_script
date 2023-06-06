@@ -1,0 +1,32 @@
+#!/bin/bash
+#The function is meant to evaluate the status of a file
+#create a shell function that will check for the existence of a file
+#check if it's a file
+#check if it's a directory
+#check if it's readable, writable, executable.
+#return one if the file doesn't exit
+text_file () {
+		file="./second_script"
+		if [ -e "$file" ]; then
+			if [ -f "$file" ]; then
+				echo "It's is a regular file"
+			fi
+			if [ -d "$file" ]; then
+				echo "It's is a directory"
+			fi
+			if [ -r "$file" ]; then
+				echo "It's readable"
+			fi
+			if [ -x "$file" ]; then
+				echo "It's executable"
+			fi
+			if [ -w "$file" ]; then
+				echo "It's writable"
+			fi
+		else
+			echo "The file doesn't exist"
+		return 1
+		fi 
+}
+#main program
+text_file

@@ -1,0 +1,20 @@
+#!/bin/bash
+#program to output a system information page
+#shell funtion
+learn () {
+	echo "i am now learning about shell function"
+	return
+}
+#main program starts here
+cat << _EOF_
+<html>
+	<head>
+		<title>My page</title>
+	</head>
+	<body>
+		<p>i love you</p>
+	<body>
+</html>
+_EOF_
+learn
+echo "purpose of return in shell function"

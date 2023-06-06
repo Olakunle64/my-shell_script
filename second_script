@@ -1,0 +1,23 @@
+#!/bin/bash
+#checking the relationship between global variables and local variables in shell function
+david=2
+func_1 () {
+		local david #variable david local to func_1
+		david=4
+		echo "func_1: david = $david"
+}
+func_2 () {
+		local david #variable david local to func_2
+		david=6
+		echo "func_2: david = $david"
+}
+echo "global: david = $david"
+func_1
+echo "global: david = $david"
+func_2
+#checking the power of branching in shell scripting
+if [ "$david" -eq 2 ]; then
+	echo "david equals 2"
+else
+	echo "david is not equal to 2"
+fi

@@ -1,0 +1,19 @@
+#!/bin/bash
+#test the value of a string
+test__string () {
+value=""
+if [ -z "$value" ]; then
+	echo "There is no answer" 
+	exit 1
+elif [ "$value" == "janet" ]; then
+	echo "The value is janet"
+elif [ "$value" == "chisom" ]; then
+	echo "The value is chisom"
+elif [ "$value" == "elnuk" ]; then
+	echo "The value is elnuk"
+else
+	echo "The value is unknown"
+	return 1
+fi
+}
+test__string

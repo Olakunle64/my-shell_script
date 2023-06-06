@@ -1,0 +1,11 @@
+#!/bin/bash
+#create a script or command to git add, git commit and git push
+read -p "Current OR Parent directory? -> " directory
+if [ ! -d "$directory" ] #check if the directory inputed exist
+	echo "Error: directory $directory doesn't exist"
+	return 1
+fi
+git add "$directory"
+read -p "What's your commit message -> " msg
+git commit -m "$msg"
+git push

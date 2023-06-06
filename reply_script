@@ -1,0 +1,21 @@
+#!/bin/bash
+#create a script that read all inputs into a default variable
+de="kunle"
+echo -n "please enter as much as posible inputs -> "
+read  -e -i $de
+echo "REPLY = $REPLY"
+#using -e option allow input editing
+#using -p option with read allow prompting the user
+#using -t option allow the user to enter the input withing a specified time
+#using -s option allow the user to enter the input in silence
+read -ep "please enter three numbers -> " va1 va2 va3
+echo "va1 = $va1"
+echo "va2 = $va2"
+echo "va3 = $va3"
+
+if read -t 7 -sep "Enter your password -> " pass; then
+	echo "Your password is '$pass'"
+else
+	echo "\nYour time is out"
+	exit 1
+fi
